@@ -61,7 +61,7 @@ public class CoffeeMaker {
 
 	private boolean checkIfRecipeExists(Recipe r, boolean canAddRecipe) {
 		for(int i = 0; i < NUM_RECIPES; i++) {
-            if(r.equals(recipeArray[i])) {
+            if(r.getName().equals(recipeArray[i].getName())) {
                 canAddRecipe = false;
             }
         }
@@ -98,11 +98,7 @@ public class CoffeeMaker {
         	if(recipeArray[i].getName() != null) {
 	            if(newRecipe.equals(recipeArray[i])) { 
 	            	recipeArray[i] = new Recipe();
-	            	if(addRecipe(newRecipe)) {
-	            		canEditRecipe = true;
-	            	} else {
-	            		canEditRecipe = false;
-	            	}
+	            	canEditRecipe = true;
 	            }
         	}
         }
@@ -119,7 +115,7 @@ public class CoffeeMaker {
      * @return boolean */
     public boolean addInventory(int amtCoffee, int amtMilk, int amtSugar, int amtChocolate) {
         boolean canAddInventory = true;
-        if(amtCoffee < 0 || amtMilk < 0 || amtSugar > 0 || amtChocolate < 0) { 
+        if(amtCoffee < 0 || amtMilk < 0 || amtSugar < 0 || amtChocolate < 0) { 
             canAddInventory = false;
         }
         else {
