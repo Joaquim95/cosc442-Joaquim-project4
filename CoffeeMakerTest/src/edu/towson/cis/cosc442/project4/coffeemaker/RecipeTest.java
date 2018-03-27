@@ -219,10 +219,11 @@ public class RecipeTest {
 	public void testSetAmtChocolate_1()
 		throws Exception {
 		Recipe fixture = new Recipe();
-		fixture.setName("");
-		int amtChocolate = -1;
+		fixture.setName("Recipe");
+		int amtChocolate = -10;
 
 		fixture.setAmtChocolate(amtChocolate);
+		assertEquals(0,fixture.getAmtChocolate());
 
 		// add additional test code here
 	}
@@ -238,14 +239,34 @@ public class RecipeTest {
 	public void testSetAmtChocolate_2()
 		throws Exception {
 		Recipe fixture = new Recipe();
-		fixture.setName("");
-		int amtChocolate = 1;
+		fixture.setName("Recipe");
+		int amtChocolate = 10;
 
 		fixture.setAmtChocolate(amtChocolate);
+		assertEquals(10,fixture.getAmtChocolate());
 
 		// add additional test code here
 	}
+	
+	/**
+	 * Run the void setAmtChocolate(int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 3/22/18, 4:35 PM
+	 */
+	@Test
+	public void testSetAmtChocolate_3()
+		throws Exception {
+		Recipe fixture = new Recipe();
+		fixture.setName("Recipe");
+		int amtChocolate = 0;
 
+		fixture.setAmtChocolate(amtChocolate);
+		assertEquals(0,fixture.getAmtChocolate());
+
+		// add additional test code here
+	}
 	/**
 	 * Run the void setAmtCoffee(int) method test.
 	 *
